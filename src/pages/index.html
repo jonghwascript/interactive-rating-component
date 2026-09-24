@@ -1,40 +1,76 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-    <title> </title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 0.6875rem;
-        text-align: center;
-      }
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-  </head>
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-  <body>
+<body>
+  <div class="cover center">
+    <main id="main" class="box cluster">
+      <div class="cluster">
+        <img src="./images/icon-star.svg" alt="">
+        <div class="cluster">
+          <h1 class="title"> How did we do?</h1>
+          <p class="description">
+            Please let us know how we did with your support request. All feedback is appreciated
+            to help us improve our offering!
+          </p>
+        </div>
+      </div>
+      <form action="" class="stack">
+        <fieldset>
+          <legend class="sr-only">How did we do?</legend>
+          <ul class="cluster">
+            <li>
+              <label aria-label="One Star">
+                <input type="radio" class="sr-only" name="rating" value="1">
+                 1
+              </label>
+            </li>
+            <li>
+              <label aria-label="Two Star">
+                <input type="radio" class="sr-only" name="rating" value="2">
+                2
+              </label>
+            </li>
+            <li>
+              <label aria-label="Three Star">
+                <input type="radio" class="sr-only" name="rating" value="3">
+                3
+              </label>
+            </li>
+            <li>
+              <label aria-label="Four Star">
+                <input type="radio" class="sr-only" name="rating" value="4">
+                4
+              </label>
+            </li>
+            <li>
+              <label aria-label="Five Star">
+                <input type="radio" class="sr-only" name="rating" value="5">
+                5
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">submit</button>
+      </form>
+    </main>
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by
-      <a href="https://www.frontendmentor.io/profile/jonghwascript"
-        >jonghwascript</a
-      >.
+      <a href="https://www.frontendmentor.io/profile/jonghwascript">jonghwascript</a>.
     </footer>
-  </body>
+  </div>
+</body>
+
 </html>
