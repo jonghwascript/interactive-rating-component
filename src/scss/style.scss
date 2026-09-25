@@ -3,17 +3,188 @@
 @use 'variables'as *;
 @use 'mixins'as *; // _mixins.scss 파일이 같은 폴더에 있는 경우
 @use 'layout'as *;
-@use 'utilities' as *;
+@use 'utilities'as *;
 
 body {
   font-size: 0.9375rem;
+  background-color: $Grey-950;
+}
+
+.container {
+  max-inline-size: clamp(20.4375rem, calc(15.3683125rem + 21.628vw), 25.75rem);
+  --space: 0;
+  justify-content: center;
+}
+
+#main {
+  margin-block-start: 1.5rem;
+  background: $bg-gradient;
+  border-radius: 1.875rem;
+
+  padding-block: clamp(1.5rem, calc(1.022875rem + 2.036vw), 2rem);
+  padding-inline: 1.5rem;
+  gap: 1rem;
+
+  .star-row {
+    gap: clamp(1.5rem, calc(1.022875rem + 2.036vw), 2rem);
+
+    .star-box {
+      width: clamp(2.5rem, calc(2.022875rem + 2.036vw), 3rem); //40-48px
+      height: clamp(2.5rem, calc(2.022875rem + 2.036vw), 3rem);
+
+      background-color: $Grey-900;
+      border-radius: 1.25rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-inline-size: 100%;
+        block-size: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+    }
+
+    .star-text {
+      --space: 1rem;
+
+      .title {
+        @include text-preset-2;
+        color: $bg-white;
+      }
+
+      .description {
+        @include text-preset-5-r;
+        color: $Grey-500;
+        text-wrap: pretty;
+      }
+    }
+  }
+
+  .star-form {
+    --space: 1.5rem;
+
+    .star-column {
+      --space: 1rem;
+      justify-content: space-between;
+
+      .item {
+        width: clamp(2.625rem, calc(2.08825rem + 2.29vw), 3.1875rem); //42px to 51px
+        height: clamp(2.625rem, calc(2.08825rem + 2.29vw), 3.1875rem); //42px to 51px
+        @include text-preset-5-b;
+        color: $Grey-500;
+
+      }
+    }
+
+    .submit-button {
+      border: 0.0625rem solid transparent;
+      border-radius: 1.375rem;
+      padding-block: 1rem;
+      padding-inline: 6.5rem;
+      background-color: $Orange-500;
+      @include text-preset-5-b;
+      color: $Grey-950;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $bg-white;
+      }
+    }
+
+  }
+}
+
+.rating-option {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $Grey-900;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: $Grey-900;
+    background-color: $bg-white;
+  }
+
+  &:has(input[name=rating]:checked) {
+    color: $Grey-900;
+    background-color: $Orange-500;
+    text-decoration: underline;
+  }
+
+  &:has(input:focus-visible) {
+    outline: 0.125rem solid $Orange-500;
+    outline-offset: 0.1875rem;
+  }
+}
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Thanks
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
+#main.thanks {
+  margin-block-start: 1.5rem;
+  --space: 2rem;
+  text-align: center;
+
+  padding-block: clamp(2rem, calc(1.522875rem + 2.036vw), 2.5rem);
+  padding-inline: clamp(1.5rem, calc(1.022875rem + 2.036vw), 2rem);
+
+  .thanks-image {
+    margin-inline: auto;
+    width: clamp(9rem, calc(7.9265rem + 4.58vw), 10.125rem);
+    height: clamp(6rem, calc(5.284375rem + 3.053vw), 6.75rem);
+  }
+
+  .star-rating {
+    text-align: center;
+
+    >span {
+      display: inline-flex;
+      align-items: center;
+      height: 2rem;
+      padding-inline: 1rem;
+      background-color: $Grey-900;
+      border-radius: 1.375rem;
+      @include text-preset-4-r;
+      color: $Orange-500;
+    }
+  }
+
+  .title {
+    @include text-preset-1;
+    color: $bg-white;
+  }
+
+  .description {
+    @include text-preset-4-r;
+    color: $Grey-500;
+    text-wrap: pretty;
+  }
 }
 
 .attribution {
   font-size: 0.6875rem;
   text-align: center;
+  color: $Grey-500;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: $Grey-500;
+}
+
+#error {
+  text-align: center;
+  color: $bg-red;
+}
+
+#error:empty {
+  display: none;
 }

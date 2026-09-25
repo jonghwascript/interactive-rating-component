@@ -75,6 +75,13 @@ h1, h2, h3, h4 {
   max-width: 60ch;
 }
 
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 // Fieldset 완벽 초기화
 fieldset {
   border: none;
