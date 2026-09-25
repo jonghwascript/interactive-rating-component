@@ -48,7 +48,7 @@ The selected rating is passed through a URL query parameter, such as `thanks.htm
 - Vanilla JavaScript and `URLSearchParams`
 - Gulp for compiling SCSS, processing HTML, copying assets, and watching changes
 
-The pages also load jQuery, but the rating logic uses native JavaScript APIs.
+The rating logic uses native JavaScript APIs without jQuery.
 
 ### Local development
 
