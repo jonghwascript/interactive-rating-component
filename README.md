@@ -54,14 +54,14 @@ The rating logic uses native JavaScript APIs without jQuery.
 
 1. Run `npm install` to install the development dependencies.
 2. Run `npm run dev` to build the project and watch source files for changes.
-3. Serve the generated `dist` directory with a local static server and open `dist/index.html` through that server. The Gulp task does not start a web server.
+3. Set the local static server's document root to `dist` and open its root URL (`/`). This serves the generated `dist/index.html`. The Gulp task does not start a web server.
 
 Other commands:
 
 - `npm run build`: rebuild the generated files in `dist`.
 - `npm run format`: format the source files using the Gulp Prettier task.
 
-Edit the files in `src`, rather than the generated files in `dist`. The project root's `index.html` is starter content; the working rating page is built from `src/pages/index.html`.
+Edit the files in `src`, rather than the generated files in `dist`. The rating page is built from `src/pages/index.html` into `dist/index.html`. There is no duplicate HTML entry point at the repository root. GitHub Pages publishes the `dist` directory using the deployment workflow.
 
 ### What I learned
 
