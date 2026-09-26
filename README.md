@@ -32,6 +32,10 @@ Users should be able to:
 
 The selected rating is passed through a URL query parameter, such as `thanks.html?rating=4`. The thank-you page validates this value before displaying it. Missing or invalid values redirect visitors to the rating page. This is a frontend demo; ratings are not stored on a server.
 
+### Screenshot
+
+![](./screenshot.jpg)
+
 ### Links
 - Solution URL: [Repository](https://github.com/jonghwascript/interactive-rating-component)
 - Live Site URL: [Live site](https://jonghwascript.github.io/interactive-rating-component)
@@ -61,7 +65,7 @@ Other commands:
 - `npm run build`: rebuild the generated files in `dist`.
 - `npm run format`: format the source files using the Gulp Prettier task.
 
-Edit the files in `src`, rather than the generated files in `dist`. The rating page is built from `src/pages/index.html` into `dist/index.html`. There is no duplicate HTML entry point at the repository root. GitHub Pages publishes the `dist` directory using the deployment workflow.
+Edit the files in `src`, rather than the generated files in `dist`. The rating page is built from `src/pages/index.html` into `dist/index.html`. The repository root's `index.html` redirects to that built page. Generated files in `dist` are tracked, so rebuild them after source changes before committing. GitHub Pages publishes the `dist` directory using the deployment workflow.
 
 ### What I learned
 
