@@ -16,7 +16,7 @@ body {
   justify-content: center;
 }
 
-#main {
+.rating-card {
   margin-block-start: 1.5rem;
   background: $bg-gradient;
   border-radius: 1.875rem;
@@ -130,7 +130,7 @@ body {
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Thanks
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++
-#main.thanks {
+.rating-card.thanks {
   margin-block-start: 1.5rem;
   --space: 2rem;
   text-align: center;
