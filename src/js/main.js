@@ -24,7 +24,7 @@ if (ratingForm) {
     }
 
     // 페이지가 바뀌어도 점수를 읽을 수 있도록 주소에 담아 전달합니다.
-    window.location.href = './thanks.html?rating=' + selectedRating.value;
+    window.location.href = `./thanks.html?rating=${selectedRating.value}`;
   });
 
   ratingForm.addEventListener('change', function () {
