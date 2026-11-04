@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+$Grey-950: #131518;
+$Grey-900: #262E38;
+$Grey-500: #969FAD;
+
+$Orange-500: #FC7614;
+
+$bg-white: #ffffff;
+$bg-gray: #949494;
+$bg-blue-800: #242742;
+$bg-blue-700: #36384d;
+$bg-red: #ff6155;
+
+$bg-gradient: radial-gradient(circle,rgba(35, 42, 52, 1) 0%, rgba(35, 42, 52, 1) 100%);
+
+$breakpoints: (
+  'tablet': 768px,
+  'desktop': 1024px,
+);

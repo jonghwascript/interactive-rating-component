@@ -1,0 +1,76 @@
+// Layout primitives from Every Layout by Heydon Pickering & Andy Bell
+// https://every-layout.dev/layouts — © Heydon Pickering & Andy Bell
+// Obtained via https://gist.github.com/Arkweid/18cc3e64c84e1292c2b3a5143bb02a2b
+// (no licence stated), then fixed and modified for this project.
+// Used under a purchased Every Layout licence held by the repository owner.
+// Not covered by this repository's license. Do not copy or redistribute.
+// Only layout patterns used by the rating and thank-you pages.
+
+.stack {
+  // 1. 모듈러 스케일에 기반한 기본 간격 설정 (언제든 덮어쓸 수 있도록 CSS 변수 사용)
+  --space: 1.5rem;
+
+  // 2. 블록 요소들을 세로로 안전하게 쌓기 위한 모던 규칙
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  // 3. 자식 요소들 사이에 일정한 여백 주입
+  gap: var(--space, 1.5rem);
+}
+
+.stack>* {
+  margin-block: 0;
+}
+
+.center {
+  // 패딩을 너비 계산에서 제외
+  box-sizing: content-box;
+  // 최대 너비를 텍스트 읽기 좋은 크기(Measure)로 제한
+  max-inline-size: 60ch;
+  // 가로 여백만 자동으로 설정하여 중앙 정렬
+  margin-inline: auto;
+  // 최소 가로 여백 적용
+  padding-inline-start: var(--s1, 1.5rem);
+  padding-inline-end: var(--s1, 1.5rem);
+  //| padding | ←──── 60ch content ────→ | padding |
+}
+
+.cluster {
+  // Flexbox 문맥 설정
+  display: flex;
+  // 자식 요소들이 넘치면 자연스럽게 줄바꿈 허용
+  flex-wrap: wrap;
+  // 간격 설정 (기본 1rem)
+  gap: var(--space, 1rem);
+  // 가로 정렬 방식 선택 (기본값 flex-start)
+  justify-content: center;
+  // 세로 정렬 방식 선택 (기본값 flex-start)
+  align-items: center;
+}
+
+.cover {
+  --space: var(--s1, 1.5rem);
+  // 세로(열) 방향 Flex 문맥 설정
+  display: flex;
+  flex-direction: column;
+  // 최소 높이를 화면 전체(100vh)로 설정
+  min-block-size: 100vh;
+  // 패딩 값 설정
+  padding: var(--space);
+}
+
+.cover>* {
+  // 각 자식 요소에 위아래 마진 부여
+  margin-block: var(--s1, 1.5rem);
+}
+
+.cover> :first-child:not(h1) {
+  // 첫 번째 자식이 중앙 요소(h1)가 아니면 위쪽 마진 제거 (천장에 붙임)
+  margin-block-start: 0;
+}
+
+.cover> :last-child:not(h1) {
+  // 마지막 자식이 중앙 요소(h1)가 아니면 아래쪽 마진 제거 (바닥에 붙임)
+  margin-block-end: 0;
+}
